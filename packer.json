@@ -7,16 +7,18 @@
         "vpc_id": "",
         "subnet_id": ""
     },
+    "_comment1": "Packer build -var \"aws_secret_key=foo\" packer.json",
+    "_comment2": "Packer build -var-file packer-vars.json packer.json",
     "builders": [
         {
             "type": "amazon-ebs",
-            "region": "{{user 'region}}",
-            "source_ami": "{{user 'source_ami}}",
-            "instance_type": "{{user, 'instance_type}}",
+            "region": "{{user `region`}}",
+            "source_ami": "{{user `source_ami`}}",
+            "instance_type": "{{user `instance_type`}}",
             "ssh_username": "ubuntu",
-            "ami_name": "HSK-{{isotime | clean_resource_name}}",
-            "vpc_id": "{{user 'vpc_id'}}",
-            "subnet_id": "{{user 'subnet_id}}",
+            "ami_name": "DevOpsClass-B26-ansible2-{{isotime | clean_resource_name}}",
+            "vpc_id": "{{user `vpc_id`}}",
+            "subnet_id": "{{user `subnet_id`}}",
             "tags": {
                 "Name": "HSK-{{isotime | clean_resource_name}}"
             }
