@@ -16,7 +16,7 @@
             "source_ami": "{{user `source_ami`}}",
             "instance_type": "{{user `instance_type`}}",
             "ssh_username": "ubuntu",
-            "ami_name": "DevOpsClass-B26-ansible2-{{isotime | clean_resource_name}}",
+            "ami_name": "HSK-{{isotime | clean_resource_name}}",
             "vpc_id": "{{user `vpc_id`}}",
             "subnet_id": "{{user `subnet_id`}}",
             "tags": {
@@ -34,7 +34,7 @@
                 "sudo touch /home/ansibleadmin/.ssh/authorized_keys",
                 "sudo usermod -aG sudo ansbleadmin",
                 "echo 'ansibleadmin ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers",
-                "echo '' | sudo tee /home/ansibleadmin/.ssh/authorized_keys"
+                "echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDNse0UUIZ8BDMb+/Jxu1DOTBlqqV28xl/5ew0FjZWcPZd9f2GtpzFJL8tPbFLtlpy/DIavOh6/vLS+iegx3+auzdpahtVtWU9Ol4uHm6WsfedcL2jRdRxqNkxSnaJcPIURDyNJwZXWVyVm5ll1lurb0bsPule9bRanGHrgp4acOpajqKidS+KgSq/6bzP6ZQilBbz1xvlZJPw8o46iDTv5aIYcem612WLhbTivytpi7sbyxYVHeKmnrxJJxZE/YMT8/B2DC2s+NazbgvuoMrBlRhmQiD3ja1o6Hh5M13fI9IpL/pcpYgwT9jpTYb6w6SRy1Coc3NFYd9sCNwkZWkhcxoqGjz6jw5740LFZnBAbSSpc+VZ3dk/t1+VSAtNj9XHGw3aZSPfn1J9t37p2bWinPtJiw4Haf9MX4nHkDxb78jsqufs214Oh18cTYjLEqWUW/JeaF9Ma2ML/qXLwhK0OtkUIlEQuAuVReywbooC3b9X9ReUbYpbyXFVdgmV6T5U=' | sudo tee /home/ansibleadmin/.ssh/authorized_keys"
             ]
         }
     ]
