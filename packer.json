@@ -12,7 +12,14 @@
             "type": "amazon-ebs",
             "region": "{{user 'region}}",
             "source_ami": "{{user 'source_ami}}",
-            
+            "instance_type": "{{user, 'instance_type}}",
+            "ssh_username": "ubuntu",
+            "ami_name": "HSK-{{isotime | clean_resource_name}}",
+            "vpc_id": "{{user 'vpc_id'}}",
+            "subnet_id": "{{user 'subnet_id}}",
+            "tags": {
+                "Name": "HSK-{{isotime | clean_resource_name}}"
+            }
         }
     ]
 }
