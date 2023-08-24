@@ -8,7 +8,7 @@
         "subnet_id": ""
     },
     "_comment1": "Packer build -var \"aws_secret_key=foo\" packer.json",
-    "_comment2": "Packer build -var-file packer-vars.json packer.json",
+    "_comment2": "packer build -var-file packer-vars.json packer.json",
     "builders": [
         {
             "type": "amazon-ebs",
@@ -28,13 +28,13 @@
         {
             "type": "shell",
             "inline": [
-                "sudo useradd -m ansbleadmin --shell /bin/bash",
+                "sudo useradd -m ansibleadmin --shell /bin/bash",
                 "sudo mkdir -p /home/ansibleadmin/.ssh",
                 "sudo chown -R ansibleadmin /home/ansibleadmin/",
                 "sudo touch /home/ansibleadmin/.ssh/authorized_keys",
-                "sudo usermod -aG sudo ansbleadmin",
+                "sudo usermod -aG sudo ansibleadmin",
                 "echo 'ansibleadmin ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers",
-                "echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDNse0UUIZ8BDMb+/Jxu1DOTBlqqV28xl/5ew0FjZWcPZd9f2GtpzFJL8tPbFLtlpy/DIavOh6/vLS+iegx3+auzdpahtVtWU9Ol4uHm6WsfedcL2jRdRxqNkxSnaJcPIURDyNJwZXWVyVm5ll1lurb0bsPule9bRanGHrgp4acOpajqKidS+KgSq/6bzP6ZQilBbz1xvlZJPw8o46iDTv5aIYcem612WLhbTivytpi7sbyxYVHeKmnrxJJxZE/YMT8/B2DC2s+NazbgvuoMrBlRhmQiD3ja1o6Hh5M13fI9IpL/pcpYgwT9jpTYb6w6SRy1Coc3NFYd9sCNwkZWkhcxoqGjz6jw5740LFZnBAbSSpc+VZ3dk/t1+VSAtNj9XHGw3aZSPfn1J9t37p2bWinPtJiw4Haf9MX4nHkDxb78jsqufs214Oh18cTYjLEqWUW/JeaF9Ma2ML/qXLwhK0OtkUIlEQuAuVReywbooC3b9X9ReUbYpbyXFVdgmV6T5U=' | sudo tee /home/ansibleadmin/.ssh/authorized_keys"
+                "echo '' | sudo tee /home/ansibleadmin/.ssh/authorized_keys"
             ]
         }
     ]
