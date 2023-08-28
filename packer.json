@@ -32,7 +32,7 @@
         "sudo chkconfig httpd on",
         "sudo service httpd start",
         "sudo chown -R ec2-user:ec2-user /var/www/",
-        "echo 'packer test' > /var/www/html/index.html"
+        "echo '<h1><center>HTTPD configured with Packer...</center></h1>' > /var/www/html/index.html"
       ]
     }
   ]
